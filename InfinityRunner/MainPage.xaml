@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InfinityRunner.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Image Source="cidade.png"
+               Aspect="AspectFit"/>
+
+       <Image Source="asfalto.jpg"
+              WidthRequest="300"
+              HeightRequest="200"
+              VerticalOptions="End"/>
+
+        <Image Source="skyline.png"
+               WidthRequest="200" />
+    </Grid>    
+
+</ContentPage>
