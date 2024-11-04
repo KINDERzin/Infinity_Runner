@@ -6,19 +6,27 @@
 
        <Grid>
               <HorizontalStackLayout x:Name="layerFundo">
-                     <Image Source="fundod.png"
+                     <Image Source="fundod.jpg"
                             Aspect="AspectFill"/>
-                     <Image Source="fundod.png"
+                     <Image Source="fundod.jpg"
                             Aspect="AspectFill"/>
-                     <Image Source="fundod.png"
+                     <Image Source="fundod.jpg"
                             Aspect="AspectFill"/>
               </HorizontalStackLayout>
               <HorizontalStackLayout x:Name="layerCidade">
-                     <Image Source="cidadet.png"
+                     <Image Source="cidadec.png"
                             HeightRequest="300"/>
-                     <Image Source="cidadet.png"
+                     <Image Source="cidadec.png"
                             HeightRequest="300"/>
-                     <Image Source="cidadet.png"
+                     <Image Source="cidadec.png"
+                            HeightRequest="300"/>
+              </HorizontalStackLayout>
+              <HorizontalStackLayout x:Name="layerSemaforo">
+                     <Image Source="semaforo.png"
+                            HeightRequest="300"/>
+                     <Image Source="semaforo.png"
+                            HeightRequest="300"/>
+                     <Image Source="semaforo.png"
                             HeightRequest="300"/>
               </HorizontalStackLayout>
               <HorizontalStackLayout x:Name="layerAsfalto">
@@ -28,7 +36,7 @@
                      <Image Source="asfalto.jpeg"
                             WidthRequest="400"
                             VerticalOptions="End"/>
-                     <Image Source="asfalto.jpg"
+                     <Image Source="asfalto.jpeg"
                             WidthRequest="400"
                             VerticalOptions="End"/>
               </HorizontalStackLayout>
