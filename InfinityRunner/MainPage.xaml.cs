@@ -11,6 +11,7 @@ public partial class MainPage : ContentPage
 	int velocidade1 = 0;
 	int velocidade2 = 0;
 	int velocidade3 = 0;
+	int velocidade4 = 0;
 	int larguraJanela = 0;
 	int alturaJanela = 0;
 
@@ -45,16 +46,23 @@ public partial class MainPage : ContentPage
 	{
 		velocidade1 = (int)(w * 0.001);
 		velocidade2 = (int)(w * 0.004);
-		velocidade3 = (int)(w * 0.008);
+		velocidade3 = (int)(w * 0.007);
+		velocidade4 = (int)(w * .009);
 		velocidade = (int)(w * 0.01);
 	}
 
 	void CorrigeTamanhoCenario(double w, double h)
 	{
-		foreach (var a in layerFundo.Children)
+		foreach (var a in layerUm.Children)
 			(a as Image).WidthRequest = w;
 
-		foreach (var a in layerCidade.Children)
+		foreach (var a in layerDois.Children)
+			(a as Image).WidthRequest = w;
+		
+		foreach (var a in layerTres.Children)
+			(a as Image).WidthRequest = w;
+		
+		foreach (var a in layerQuatro.Children)
 			(a as Image).WidthRequest = w;
 		
 		foreach (var a in layerSemaforo.Children)
@@ -63,8 +71,10 @@ public partial class MainPage : ContentPage
 		foreach (var a in layerAsfalto.Children)
 			(a as Image).WidthRequest = w;
 
-		layerFundo.WidthRequest = w * 1.5;
-		layerCidade.WidthRequest = w * 1.5;
+		layerUm.WidthRequest = w * 1.5;
+		layerDois.WidthRequest = w * 1.5;
+		layerTres.WidthRequest = w * 1.5;
+		layerQuatro.WidthRequest = w * 1.5;
 		layerSemaforo.WidthRequest = w * 1.5;
 		layerAsfalto.WidthRequest = w * 1.5;
 	}
@@ -72,16 +82,20 @@ public partial class MainPage : ContentPage
 	void GerenciaCenarios()
 	{
 		MoveCenario();
-		GerenciaCenario(layerFundo);
-		GerenciaCenario(layerCidade);
+		GerenciaCenario(layerUm);
+		GerenciaCenario(layerDois);
+		GerenciaCenario(layerTres);
+		GerenciaCenario(layerQuatro);
 		GerenciaCenario(layerSemaforo);
 		GerenciaCenario(layerAsfalto);		
 	}
 
 	void MoveCenario()
 	{
-		layerFundo.TranslationX -= velocidade1;
-		layerCidade.TranslationX -= velocidade2;
+		layerUm.TranslationX -= velocidade1;
+		layerDois.TranslationX -= velocidade2;
+		layerTres.TranslationX -= velocidade3;
+		layerQuatro.TranslationX -= velocidade4;
 		layerSemaforo.TranslationX -= velocidade3;
 		layerAsfalto.TranslationX -= velocidade;
 	}
