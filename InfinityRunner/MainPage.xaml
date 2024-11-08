@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InfinityRunner.MainPage"
+              xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              Shell.NavBarIsVisible="False">
 
        <Grid>
@@ -47,7 +48,11 @@
                             WidthRequest="400"
                             VerticalOptions="End"/>
               </HorizontalStackLayout>
-                     <Image Source="skyline.png"
-                            WidthRequest="200"/>
+              <ff:CachedImage
+                     CacheType="Memory"
+                     CacheDuration="365"
+                     x:Name="ImgCarro"
+                     WidthRequest="200"/>
+
        </Grid>
 </ContentPage>

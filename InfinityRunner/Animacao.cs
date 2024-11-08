@@ -1,3 +1,5 @@
+using FFImageLoading.Maui;
+
 namespace InfinityRunner;
 
 public class Animacao
@@ -9,9 +11,9 @@ public class Animacao
     int frameAtual = 1;
     protected bool loop = true;
     bool parado = false;
-    protected Image compImage;
+    protected CachedImage compImage;
 
-    public Animacao(Image a)
+    public Animacao(CachedImage a)
     {
         compImage = a;
     }
@@ -36,8 +38,8 @@ public class Animacao
         if(parado)
             return;
         
-        string nomeArquivo;
-        int tamanhoAnimacao;
+        string nomeArquivo = "";
+        int tamanhoAnimacao = 1;
 
         if(animacaoAtiva == 1)
         {

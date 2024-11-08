@@ -2,6 +2,8 @@
 
 public partial class MainPage : ContentPage
 {
+	Player player;
+
 	bool estaMorto = false;
 	bool estaPulando = false;
 
@@ -18,6 +20,8 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+		player = new Player(ImgCarro);
+		player.Run();
 	}
 
 	protected override void OnAppearing()
@@ -28,9 +32,14 @@ public partial class MainPage : ContentPage
 
 	async Task Desenha()
 	{
+		// bool a =false;
 		while(!estaMorto)
 		{
 			GerenciaCenarios();
+			player.Desenha();
+			//ImgCarro.IsVisible = a;
+			//ImgCarroBack.IsVisible = !a;
+			//a = !a;
 			await Task.Delay(tempoEntreFrames);
 		}
 	}
