@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InfinityRunner.MainPage"
-              xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+             xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              Shell.NavBarIsVisible="False">
 
        <Grid>
+              <!-- Layer 1 -->
               <HorizontalStackLayout x:Name="layerUm">
                      <Image Source="um.png"
                             Aspect="AspectFill"/>
@@ -14,45 +15,62 @@
                      <Image Source="um.png"
                             Aspect="AspectFill"/>
               </HorizontalStackLayout>
+              <!-- Layer 2 -->
               <HorizontalStackLayout x:Name="layerDois">
-                     <Image Source="doi.png"/>
-                     <Image Source="doi.png"/>
-                     <Image Source="doi.png"/>
+                     <Image Source="dois.png"/>
+                     <Image Source="dois.png"/>
+                     <Image Source="dois.png"/>
               </HorizontalStackLayout>
+              <!-- Layer 3 -->
               <HorizontalStackLayout x:Name="layerTres">
                      <Image Source="tres.png"/>
                      <Image Source="tres.png"/>
                      <Image Source="tres.png"/>
               </HorizontalStackLayout>
+              <!-- Layer 4 -->
               <HorizontalStackLayout x:Name="layerQuatro">
                      <Image Source="quatro.png"/>
                      <Image Source="quatro.png"/>
                      <Image Source="quatro.png"/>
               </HorizontalStackLayout>
-              <HorizontalStackLayout x:Name="layerSemaforo">
-                     <Image Source="semaforo.png"
-                            HeightRequest="300"/>
-                     <Image Source="semaforo.png"
-                            HeightRequest="300"/>
-                     <Image Source="semaforo.png"
-                            HeightRequest="300"/>
+              <!-- Layer 5 -->
+              <HorizontalStackLayout x:Name="layerCinco"
+                                     VerticalOptions="End"
+                                     HorizontalOptions="Fill"
+                            BackgroundColor="Black">
+                     <Image Source="poste.png"
+                            HeightRequest="300"
+                            WidthRequest="200"
+                            BackgroundColor="Red"/>
+                     <Image Source="corrimao.png"
+                            HeightRequest="100"
+                            WidthRequest="200"
+                            BackgroundColor="Blue"/>
+                     <Image Source="corrimao.png"
+                            HeightRequest="100"
+                            WidthRequest="200"
+                            BackgroundColor="Green"/>
               </HorizontalStackLayout>
-              <HorizontalStackLayout x:Name="layerAsfalto">
+              <!-- Layer Asfalto -->
+              <HorizontalStackLayout x:Name="layerAsfalto"
+                                     VerticalOptions="End">
                      <Image Source="asfalto.jpeg"
                             WidthRequest="400"
-                            VerticalOptions="End"/>
+                            VerticalOptions="End"
+                            Aspect="AspectFill"/>
                      <Image Source="asfalto.jpeg"
                             WidthRequest="400"
-                            VerticalOptions="End"/>
+                            VerticalOptions="End"
+                            Aspect="AspectFill"/>
                      <Image Source="asfalto.jpeg"
                             WidthRequest="400"
-                            VerticalOptions="End"/>
+                            VerticalOptions="End"
+                            Aspect="AspectFill"/>
               </HorizontalStackLayout>
-              <ff:CachedImage
-                     CacheType="Memory"
-                     CacheDuration="365"
-                     x:Name="ImgCarro"
-                     WidthRequest="200"/>
-
+              <!-- Carro -->
+              <ff:CachedImage CacheType="Memory"
+                              CacheDuration="365"
+                              x:Name="ImgCarro"
+                              WidthRequest="200"/>
        </Grid>
 </ContentPage>

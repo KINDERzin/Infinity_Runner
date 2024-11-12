@@ -74,7 +74,7 @@ public partial class MainPage : ContentPage
 		foreach (var a in layerQuatro.Children)
 			(a as Image).WidthRequest = w;
 		
-		foreach (var a in layerSemaforo.Children)
+		foreach (var a in layerCinco.Children)
 			(a as Image).WidthRequest = w;
 		
 		foreach (var a in layerAsfalto.Children)
@@ -84,7 +84,7 @@ public partial class MainPage : ContentPage
 		layerDois.WidthRequest = w * 1.5;
 		layerTres.WidthRequest = w * 1.5;
 		layerQuatro.WidthRequest = w * 1.5;
-		layerSemaforo.WidthRequest = w * 1.5;
+		layerCinco.WidthRequest = w * 1.5;
 		layerAsfalto.WidthRequest = w * 1.5;
 	}
 
@@ -95,7 +95,7 @@ public partial class MainPage : ContentPage
 		GerenciaCenario(layerDois);
 		GerenciaCenario(layerTres);
 		GerenciaCenario(layerQuatro);
-		GerenciaCenario(layerSemaforo);
+		GerenciaCenario(layerCinco);
 		GerenciaCenario(layerAsfalto);		
 	}
 
@@ -105,7 +105,7 @@ public partial class MainPage : ContentPage
 		layerDois.TranslationX -= velocidade2;
 		layerTres.TranslationX -= velocidade3;
 		layerQuatro.TranslationX -= velocidade4;
-		layerSemaforo.TranslationX -= velocidade3;
+		layerCinco.TranslationX -= velocidade3;
 		layerAsfalto.TranslationX -= velocidade;
 	}
 
