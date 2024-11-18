@@ -6,6 +6,9 @@
              Shell.NavBarIsVisible="False">
 
        <Grid>
+              <Grid.GestureRecognizers>
+                     <TapGestureRecognizer Tapped="OnGridClicked"/>
+              </Grid.GestureRecognizers>
               <!-- Layer 1 -->
               <HorizontalStackLayout x:Name="layerUm">
                      <Image Source="um.png"
@@ -37,7 +40,8 @@
               <HorizontalStackLayout x:Name="layerCinco"
                                      VerticalOptions="End"
                                      HorizontalOptions="Fill"
-                            BackgroundColor="Black">
+                                     BackgroundColor="Black"
+                                     Margin="0,0,100,0">
                      <Image Source="poste.png"
                             HeightRequest="300"
                             WidthRequest="200"
@@ -57,15 +61,15 @@
                      <Image Source="asfalto.jpeg"
                             WidthRequest="400"
                             VerticalOptions="End"
-                            Aspect="AspectFill"/>
+                            Aspect="AspectFit"/>
                      <Image Source="asfalto.jpeg"
                             WidthRequest="400"
                             VerticalOptions="End"
-                            Aspect="AspectFill"/>
+                            Aspect="AspectFit"/>
                      <Image Source="asfalto.jpeg"
                             WidthRequest="400"
                             VerticalOptions="End"
-                            Aspect="AspectFill"/>
+                            Aspect="AspectFit"/>
               </HorizontalStackLayout>
               <!-- Carro -->
               <ff:CachedImage CacheType="Memory"

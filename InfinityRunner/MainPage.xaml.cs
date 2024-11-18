@@ -5,9 +5,15 @@ public partial class MainPage : ContentPage
 	Player player;
 
 	bool estaMorto = false;
+	bool estaNoChao = true;
 	bool estaPulando = false;
+	bool estaNoAr = false;
 
 	const int tempoEntreFrames = 25;
+	const int forcaGravidade = 6;
+	const int forcaPulo = 8;
+	const int maxTempoPulando = 6;
+	const int MaxTempoNoAr = 4;
 
 	int velocidade = 0;
 	int velocidade1 = 0;
@@ -16,6 +22,8 @@ public partial class MainPage : ContentPage
 	int velocidade4 = 0;
 	int larguraJanela = 0;
 	int alturaJanela = 0;
+	int tempoPulando = 0;
+	int tempoNoAr = 0;
 
 	public MainPage()
 	{
@@ -32,17 +40,60 @@ public partial class MainPage : ContentPage
 
 	async Task Desenha()
 	{
-		// bool a =false;
 		while(!estaMorto)
 		{
-			GerenciaCenarios();
-			player.Desenha();
-			//ImgCarro.IsVisible = a;
-			//ImgCarroBack.IsVisible = !a;
-			//a = !a;
-			await Task.Delay(tempoEntreFrames);
+			if(!estaPulando && !estaNoAr)
+			{
+				AplicaGravidade();
+				player.Desenha();
+			}
+			else 
+				AplicaPulo();
 		}
+		await Task.Delay(tempoEntreFrames);
 	}
+
+	void AplicaGravidade()
+	{
+		if(player.GetY() < 0)
+			player.MoveY(forcaGravidade);
+		else if(player.GetY() >= 0)
+		{
+			player.SetY(0);
+			estaNoChao = true;
+		}	
+	}
+
+	void AplicaPulo()
+	{
+		estaNoChao = false;
+		if(estaPulando && tempoPulando >= maxTempoPulando)
+		{
+			estaPulando = false;
+			estaNoAr = false;
+			tempoNoAr = 0;
+		}
+		else if(estaNoAr && tempoNoAr >= maxTempoPulando)
+		{
+			estaPulando = false;
+			estaNoAr = false;
+			tempoPulando = 0;
+			tempoNoAr = 0;
+		}
+		else if(estaPulando && tempoPulando < maxTempoPulando)
+		{
+			player.MoveY(-forcaPulo);
+			tempoPulando++;
+		}
+		else if(estaNoAr)
+			tempoNoAr++;
+	}
+
+    void OnGridClicked(object sender, TappedEventArgs e)
+    {
+        if(estaNoChao)
+            estaPulando = true;
+    }
 
 	protected override void OnSizeAllocated(double w, double h)
 	{

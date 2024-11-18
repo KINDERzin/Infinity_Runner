@@ -1,4 +1,5 @@
 using FFImageLoading.Maui;
+using Microsoft.Maui.Platform;
 
 namespace InfinityRunner;
 
@@ -8,8 +9,8 @@ public class Player : Animacao
     public Player(CachedImage a): base (a)
     {
         //Animaçao do carro andando
-        for(int i = 1; i <= 4; i++)
-            animacao1.Add($"carro{i.ToString("D2")}.png");
+        for(int i = 1; i <= 36; i++)
+            animacao1.Add($"mamaco{i.ToString("D2")}.png");
         //Animação da explosão
         for(int i = 1; i < 6; i++)
             animacao2.Add($"morreu{i.ToString("D2")}.png");
@@ -27,5 +28,20 @@ public class Player : Animacao
         loop = true;
         SetAnimacaoAtiva(1);
         Play();
+    }
+
+    public void MoveY(int n)
+    {
+        compImage.TranslationY += n;
+    }
+
+    public double GetY()
+    {
+        return compImage.TranslationY;
+    }
+
+    public void SetY(double n)
+    {
+        compImage.TranslationY = n;
     }
 }
