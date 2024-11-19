@@ -48,7 +48,7 @@
                             BackgroundColor="Red"/>
                      <Image Source="corrimao.png"
                             HeightRequest="100"
-                            WidthRequest="200"
+                            WidthRequest="200"   
                             BackgroundColor="Blue"/>
                      <Image Source="corrimao.png"
                             HeightRequest="100"
@@ -72,7 +72,7 @@
                             Aspect="AspectFit"/>
               </HorizontalStackLayout>
               <!-- Carro -->
-              <ff:CachedImage CacheType="Memory"
+              <ff:CachedImageView CacheType="Memory"
                               CacheDuration="365"
                               x:Name="ImgCarro"
                               WidthRequest="200"/>

@@ -4,7 +4,7 @@ namespace InfinityRunner;
 
 public class Animacao
 {
-    protected CachedImage compImage;
+    protected CachedImageView compImage;
     protected List<string> animacao1 = new List<string>();
     protected List<string> animacao2 = new List<string>();
     protected List<string> animacao3 = new List<string>();
@@ -13,7 +13,7 @@ public class Animacao
     int frameAtual = 1;
     bool parado = false;
 
-    public Animacao(CachedImage a)
+    public Animacao(CachedImageView a)
     {
         compImage = a;
     }

@@ -6,7 +6,7 @@ namespace InfinityRunner;
 public delegate void CallBack();
 public class Player : Animacao
 {
-    public Player(CachedImage a): base (a)
+    public Player(CachedImageView a): base (a)
     {
         //Animaçao do carro andando
         for(int i = 1; i <= 36; i++)
