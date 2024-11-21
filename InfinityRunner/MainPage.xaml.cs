@@ -3,6 +3,7 @@
 public partial class MainPage : ContentPage
 {
 	Player player;
+	Inimigos inimigos;
 
 	bool estaMorto = false;
 	bool estaNoChao = true;
@@ -42,6 +43,9 @@ public partial class MainPage : ContentPage
 	{
 		while(!estaMorto)
 		{
+			GerenciaCenarios();
+			if(inimigos != null)
+				inimigos.Desenha(velocidade);	
 			if(!estaPulando && !estaNoAr)
 			{
 				AplicaGravidade();
@@ -100,6 +104,11 @@ public partial class MainPage : ContentPage
 		base.OnSizeAllocated(w, h);
 		CorrigeTamanhoCenario(w, h);
 		CalculaVelocidade(w);
+
+		inimigos = new Inimigos(-w);
+		inimigos.Add(new Inimigo(pedra));
+		inimigos.Add(new Inimigo(pedradois));
+		inimigos.Add(new Inimigo(tronco));
 	}
 
 	void CalculaVelocidade(double w)

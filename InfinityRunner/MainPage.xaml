@@ -76,5 +76,12 @@
                               CacheDuration="365"
                               x:Name="ImgCarro"
                               WidthRequest="200"/>
+
+              <Image Source="pedra.png"
+                     x:Name="pedra"/>
+              <Image Source="pedradois.png"
+                     x:Name="pedradois"/>
+              <Image Source="tronco.png"
+                     x:Name="tronco"/>
        </Grid>
 </ContentPage>
