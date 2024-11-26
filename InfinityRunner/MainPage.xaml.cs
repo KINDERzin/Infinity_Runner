@@ -53,8 +53,9 @@ public partial class MainPage : ContentPage
 			}
 			else 
 				AplicaPulo();
+	
+			await Task.Delay(tempoEntreFrames);
 		}
-		await Task.Delay(tempoEntreFrames);
 	}
 
 	void AplicaGravidade()
@@ -181,4 +182,3 @@ public partial class MainPage : ContentPage
 		}
 	}
 }
-

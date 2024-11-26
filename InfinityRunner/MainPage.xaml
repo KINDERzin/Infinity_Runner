@@ -41,19 +41,22 @@
                                      VerticalOptions="End"
                                      HorizontalOptions="Fill"
                                      BackgroundColor="Black"
-                                     Margin="0,0,100,0">
+                                     Margin="0,0,0,90">
                      <Image Source="poste.png"
                             HeightRequest="300"
-                            WidthRequest="200"
+                            WidthRequest="100"
                             BackgroundColor="Red"/>
                      <Image Source="corrimao.png"
-                            HeightRequest="100"
-                            WidthRequest="200"   
-                            BackgroundColor="Blue"/>
+                            HeightRequest="200"
+                            WidthRequest="300"   
+                            BackgroundColor="Blue"
+                            VerticalOptions="End"/>
                      <Image Source="corrimao.png"
-                            HeightRequest="100"
-                            WidthRequest="200"
-                            BackgroundColor="Green"/>
+                            HeightRequest="200"
+                            WidthRequest="300"
+                            BackgroundColor="Green"
+                            VerticalOptions="End"
+                            />
               </HorizontalStackLayout>
               <!-- Layer Asfalto -->
               <HorizontalStackLayout x:Name="layerAsfalto"
@@ -78,10 +81,13 @@
                               WidthRequest="200"/>
 
               <Image Source="pedra.png"
-                     x:Name="pedra"/>
+                     x:Name="pedra"
+                     HeightRequest="100"/>
               <Image Source="pedradois.png"
-                     x:Name="pedradois"/>
+                     x:Name="pedradois"
+                     HeightRequest="100"/>
               <Image Source="tronco.png"
-                     x:Name="tronco"/>
+                     x:Name="tronco"
+                     HeightRequest="100"/>
        </Grid>
 </ContentPage>
