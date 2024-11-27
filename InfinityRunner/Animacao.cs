@@ -51,11 +51,6 @@ public class Animacao
             nomeArquivo = animacao2[frameAtual];
             tamanhoAnimacao = animacao2.Count;
         }
-        else if(animacaoAtiva == 3)
-        {
-            nomeArquivo = animacao3[frameAtual];
-            tamanhoAnimacao = animacao3.Count;
-        }
 
         compImage.Source = ImageSource.FromFile(nomeArquivo);
         frameAtual++;

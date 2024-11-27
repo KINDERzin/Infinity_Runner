@@ -75,7 +75,7 @@ public partial class MainPage : ContentPage
 		if(estaPulando && tempoPulando >= maxTempoPulando)
 		{
 			estaPulando = false;
-			estaNoAr = false;
+			estaNoAr = true;
 			tempoNoAr = 0;
 		}
 		else if(estaNoAr && tempoNoAr >= maxTempoPulando)
